@@ -1,0 +1,37 @@
+﻿@model IEnumerable<Vidly.Models.Customer>
+
+@{
+    ViewBag.Title = "Customers";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Customers</h2>
+
+@if (!Model.Any())
+{
+    <p>Sorry, we don't have any customers yet.</p>
+}
+else
+{
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>Customer</th>
+                <th>Membership Type</th>
+                <th>Newsletter Subscriber</th>
+            </tr>
+        </thead>
+
+        @foreach (var customer in Model)
+        {
+            var newsletterSubscriberIndicator = customer.IsSubscribedToNewsLetter ? "Yes" : "No";
+
+            <tr>
+                <td>@Html.ActionLink(customer.Name, "Edit", "Customers", new { id = customer.Id }, null)</td>
+                <td>@customer.MembershipType.Name</td>
+                <td>@newsletterSubscriberIndicator</td>
+            </tr>
+        }
+    </table>
+}
+
