@@ -1,5 +1,4 @@
-﻿@model IEnumerable<Vidly.Models.Customer>
-
+﻿
 @{
     ViewBag.Title = "Customers";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -7,37 +6,17 @@
 
 <h2>Customers</h2>
 
-@if (!Model.Any())
-{
-    <p>Sorry, we don't have any customers yet.</p>
-}
-else
-{
-    <table class="table table-bordered table-hover" id="customers">
-        <thead>
-            <tr>
-                <th>Customer</th>
-                <th>Membership Type</th>
-                <th>Newsletter Subscriber</th>
-                <th>Delete</th>
-            </tr>
-        </thead>
-
-        @foreach (var customer in Model)
-        {
-            var newsletterSubscriberIndicator = customer.IsSubscribedToNewsLetter ? "Yes" : "No";
-
-            <tr>
-                <td>@Html.ActionLink(customer.Name, "Edit", "Customers", new { id = customer.Id }, null)</td>
-                <td>@customer.MembershipType.Name</td>
-                <td>@newsletterSubscriberIndicator</td>
-                <td>
-                    <button class="btn-link js-delete" data-customer-id="@customer.Id">Delete</button>
-                </td>
-            </tr>
-        }
-    </table>
-}
+<table class="table table-bordered table-hover" id="customers">
+    <thead>
+        <tr>
+            <th>Customer</th>
+            <th>Membership Type</th>
+            <th>Newsletter Subscriber</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody></tbody>
+</table>
 
 
 @section scripts
@@ -45,7 +24,35 @@ else
     <script>
         $(document).ready(function () {
 
-            $('#customers').DataTable();
+            var table = $('#customers').DataTable({
+                ajax: {
+                    url: "/api/customers",
+                    dataSrc: ""
+                },
+                columns: [
+                    {
+                        data: "name",
+                        render: function (data, type, customer) {
+                            return "<a href='/customers/edit/" + customer.id + "' >" + data + "</a>"
+                        }
+                    },
+                    {
+                        data: "membershipType.name"
+                    },
+                    {
+                        data: "isSubscribedToNewsLetter",
+                        render: function (data, type, customer) {
+                            return customer.isSubscribedToNewsLetter ? "Yes" : "No";
+                        }
+                    },
+                    {
+                        data: "id",
+                        render: function (data) {
+                            return "<button class='btn-link js-delete' data-customer-id=" + data + " >Delete</button>";
+                        }
+                    }
+                ]
+            });
 
             $('#customers').on("click", '.js-delete', function () {
                 var button = $(this);
@@ -56,7 +63,9 @@ else
                             url: "/api/customers/" + button.attr('data-customer-id'),
                             method: "DELETE",
                             success: function () {
-                                button.parents('tr').remove();
+                                //work around to force the data table to remove and redraw itself after deleting customer
+                                table.row(button.parents('tr')).remove().draw();
+                                //button.parents('tr').remove(); <-- this works when not using data table
                             }
                         });
                     }
