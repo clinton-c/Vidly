@@ -94,3 +94,11 @@ C:\Users\clint_000\Documents\Visual Studio 2015\Projects\MVC\Vidly\Vidly\obj\Deb
 C:\Users\clint_000\Documents\Visual Studio 2015\Projects\MVC\Vidly\Vidly\obj\Debug\Vidly.Migrations.AddTwoNewGeneres.resources
 C:\Users\clint_000\Documents\Visual Studio 2015\Projects\MVC\Vidly\Vidly\obj\Debug\Vidly.Migrations.AddGenreIdToMovie.resources
 C:\Users\clint_000\Documents\Visual Studio 2015\Projects\MVC\Vidly\Vidly\obj\Debug\Vidly.Migrations.AddedRequireAnnotationsOnCustomeAndMovie.resources
+C:\Users\clint_000\Documents\Visual Studio 2015\Projects\MVC\Vidly\Vidly\bin\System.Net.Http.Formatting.dll
+C:\Users\clint_000\Documents\Visual Studio 2015\Projects\MVC\Vidly\Vidly\bin\System.Web.Http.dll
+C:\Users\clint_000\Documents\Visual Studio 2015\Projects\MVC\Vidly\Vidly\bin\System.Web.Http.WebHost.dll
+C:\Users\clint_000\Documents\Visual Studio 2015\Projects\MVC\Vidly\Vidly\bin\System.Net.Http.Formatting.xml
+C:\Users\clint_000\Documents\Visual Studio 2015\Projects\MVC\Vidly\Vidly\bin\System.Web.Http.xml
+C:\Users\clint_000\Documents\Visual Studio 2015\Projects\MVC\Vidly\Vidly\bin\System.Web.Http.WebHost.xml
+C:\Users\clint_000\Documents\Visual Studio 2015\Projects\MVC\Vidly\Vidly\bin\AutoMapper.dll
+C:\Users\clint_000\Documents\Visual Studio 2015\Projects\MVC\Vidly\Vidly\bin\AutoMapper.xml
