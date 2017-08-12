@@ -22,8 +22,20 @@ else
                 <th>Delete</th>
             </tr>
         </thead>
-        <tbody>
-        </tbody>
+
+        @foreach (var customer in Model)
+        {
+            var newsletterSubscriberIndicator = customer.IsSubscribedToNewsLetter ? "Yes" : "No";
+
+            <tr>
+                <td>@Html.ActionLink(customer.Name, "Edit", "Customers", new { id = customer.Id }, null)</td>
+                <td>@customer.MembershipType.Name</td>
+                <td>@newsletterSubscriberIndicator</td>
+                <td>
+                    <button class="btn-link js-delete" data-customer-id="@customer.Id">Delete</button>
+                </td>
+            </tr>
+        }
     </table>
 }
 
