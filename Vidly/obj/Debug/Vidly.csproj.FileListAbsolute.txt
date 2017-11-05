@@ -102,3 +102,6 @@ C:\Users\clint_000\Documents\Visual Studio 2015\Projects\MVC\Vidly\Vidly\bin\Sys
 C:\Users\clint_000\Documents\Visual Studio 2015\Projects\MVC\Vidly\Vidly\bin\System.Web.Http.WebHost.xml
 C:\Users\clint_000\Documents\Visual Studio 2015\Projects\MVC\Vidly\Vidly\bin\AutoMapper.dll
 C:\Users\clint_000\Documents\Visual Studio 2015\Projects\MVC\Vidly\Vidly\bin\AutoMapper.xml
+C:\Users\clint_000\Documents\Visual Studio 2015\Projects\MVC\Vidly\Vidly\obj\Debug\Vidly.Migrations.SeedDefaultUsers.resources
+C:\Users\clint_000\Documents\Visual Studio 2015\Projects\MVC\Vidly\Vidly\obj\Debug\Vidly.Migrations.AddUserPhoneNum.resources
+C:\Users\clint_000\Documents\Visual Studio 2015\Projects\MVC\Vidly\Vidly\obj\Debug\Vidly.Migrations.AddRentals.resources
